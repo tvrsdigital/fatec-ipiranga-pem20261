@@ -1,0 +1,13 @@
+//Explique por que o primeiro scanf usa & e o segundo não
+
+	int x;
+	scanf("%d", &x);
+	char nome[50];
+	scanf("%s", nome);
+
+O primeiro scanf está pedindo um valor para ser atribuído a uma variável comum.
+Por isso se utiliza o operador "&" para indicar o endereço de memória da variável x, onde o dado inserido no programa será salvo. 
+Já no segundo scanf estamos lidando com um ponteiro. 
+Em C, quando usamos apenas o nome do ponteiro (por ex, nome), eles são convertidos automaticamente em um ponteiro que aponta para o primeiro elemento (neste caso, nome[0]); 
+Desta forma, quando escrevemos apenas nome estamos na verdade apontando para o endereço de memória de nome[0] que é o início do vetor.
+Como nome já é um endereço de memória, não é necessário utilizar o operador "&"
